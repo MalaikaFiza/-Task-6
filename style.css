@@ -1,0 +1,270 @@
+/* ===============================
+   GLOBAL RESET
+==================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+  color: #222;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===============================
+   NAVBAR
+==================================*/
+nav {
+  width: 100%;
+  background: #ffffff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+nav .logo {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 17px;
+  color: #333;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #007bff;
+}
+
+/* MOBILE MENU */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  padding: 20px;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.mobile-menu a {
+  margin: 10px 0;
+  text-decoration: none;
+  color: #333;
+}
+
+/* ===============================
+   HERO SECTION
+==================================*/
+.hero {
+  height: 80vh;
+  background: linear-gradient(
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+    ),
+    url("images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 60px;
+}
+
+.hero h1 {
+  font-size: 55px;
+  margin-bottom: 15px;
+  animation: fadeDown 1.2s ease-in-out;
+}
+
+.hero p {
+  font-size: 20px;
+  width: 50%;
+  animation: fadeUp 1.4s ease-in-out;
+}
+
+.btn {
+  background: #007bff;
+  color: white;
+  padding: 12px 26px;
+  display: inline-block;
+  margin-top: 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0056b3;
+  transform: translateY(-3px);
+}
+
+/* ===============================
+   SERVICES (DYNAMIC CONTENT)
+==================================*/
+.services {
+  padding: 60px 80px;
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.service-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+/* ===============================
+   API SECTION
+==================================*/
+.api-box {
+  background: white;
+  margin: 60px 80px;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.api-box h2 {
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   CONTACT FORM
+==================================*/
+.contact-section {
+  padding: 60px 80px;
+}
+
+form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #007bff;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+.success-msg {
+  background: #28a745;
+  color: white;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: none;
+}
+
+/* ===============================
+   FOOTER
+==================================*/
+footer {
+  background: #222;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+/* ===============================
+   ANIMATIONS
+==================================*/
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===============================
+   MEDIA QUERIES
+==================================*/
+@media (max-width: 768px) {
+
+  nav ul { display: none; }
+  .hamburger { display: block; }
+  .mobile-menu { display: none; }
+
+  .hero {
+    padding-left: 20px;
+    text-align: center;
+  }
+
+  .hero h1 { font-size: 36px; }
+  .hero p { width: 100%; }
+
+  .services,
+  .api-box,
+  .contact-section {
+    padding: 40px 20px;
+  }
+  }
